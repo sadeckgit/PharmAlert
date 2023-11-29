@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+body::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, rgb(236, 69, 181), rgb(110, 255, 207));
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+div.container{
+    position: relative;
+    width: 350px;
+    height: 450px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+div.container span{
+    position: absolute;
+    inset: 5px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+div.container span::before{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    filter: blur(10px);
+}
+
+div.container span::after{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    filter: blur(15px);
+}
+
+form{
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    transition: 0.5s;
+}
+
+form h2{
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+form div.inputbx{
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form div.inputbx input{
+    width: 100%;
+    outline: none;
+    border: none;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 15px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+form div.inputbx input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+form div.inputbx input[type="submit"]{
+    background: #2196f3;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+

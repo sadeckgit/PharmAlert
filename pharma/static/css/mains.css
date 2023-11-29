@@ -1,0 +1,424 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+section#home{
+    display: block;
+    background: #e3fde0;
+    height: 80vh;
+}
+
+section#home h2.title{
+    font-size: 2.5em;
+    font-weight: 600;
+    color: rgba(0, 134, 18, 0.753);
+}
+
+hr.line{
+    color: rgba(255, 255, 0, 0.9 );
+    justify-content: center;
+    align-items: center;
+}
+
+section#home div.alert{
+    padding: 20px;
+    margin: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, #e6e6e6, #6effbb);
+    border-radius: 12px;
+}
+
+section#home div{
+    padding: 20px;
+    margin: 20px 35px;
+    background: #e6e6e6;
+    border-radius: 12px;
+}
+
+section#home div p{
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Tahoma, sans-serif;
+    letter-spacing: 0.25em;
+    height: 180px;
+    color:rgba(0, 0, 0, 0.788);
+}
+
+
+section.pharmacies{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #444;
+}
+
+section.pharmacies div.card{
+
+    margin: 35px 90px;
+    position: relative;
+    width: 320px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #444;
+}
+
+section.pharmacies div.card div.box{
+    position: relative;
+    width: 110%;
+    height: 200px;
+    border-radius: 15px;
+}
+
+section.pharmacies div.card div.box:nth-child(1)::before{
+    content: '';
+    position: absolute;
+    top: 106px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    z-index: 10;
+    border-bottom-left-radius: 20px;
+    box-shadow: -6px 6px #444;
+}
+
+section.pharmacies div.card div.box:nth-child(1)::after{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 105px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    z-index: 10;
+    border-bottom-left-radius: 20px;
+    box-shadow: -6px 6px #444;
+}
+
+section.pharmacies div.card div.box:nth-child(2){
+    background: #fff;
+    height: 220px;
+    width: 100%;
+}
+
+section.pharmacies div.card div.box:nth-child(2)::before{
+    content: '';
+    position: absolute;
+    bottom: 105px;
+    left: -1px;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    box-shadow: -6px -6px #444;
+}
+
+section.pharmacies div.card div.box:nth-child(2)::after{
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 109px;
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    border-top-left-radius: 20px;
+    box-shadow: -6px -6px #444;
+}
+
+section.pharmacies div.card div.circle{
+    position: absolute;
+    top: 50%;
+    left: -70px;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 10px solid #444;
+}
+
+section.pharmacies div.card div.circle div.pharmaBx{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+section.pharmacies div.card div.circle div.pharmaBx img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section.pharmacies div.card div.box div.pharmaBx img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+section.pharmacies div.card div.box div.content{
+    position: absolute;
+    inset: 0;
+    padding: 30px 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section.pharmacies div.card div.box div.content h2{
+    width: 100%;
+    padding-left: 120px;
+    text-transform: capitalize;
+    font-size: 1.15em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    line-height: 1.1em;
+    color: #333;
+}
+
+section.pharmacies div.card div.box div.content ul{
+    position: relative;
+    top: 15px;
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.pharmacies div.card div.box div.content ul li{
+    list-style: none;
+    display: flex;
+    text-align: center;
+    padding: 0 10px;
+    text-transform: capitalize;
+    font-size: 1.15em;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    color: #333;
+}
+
+section.pharmacies div.card div.box div.content a{
+    position: relative;
+    top: 25px;
+    padding: 8px 30px;
+    border: none;
+    outline: none;
+    background: rgb(0, 255, 64);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid #005f33;
+    box-shadow: 0 0 0 5px #fff;
+    transition: 0.5s;
+}
+
+section.pharmacies div.card div.box div.content a:hover{
+    letter-spacing: 0.5em;
+    background: #099aee;
+}
+
+
+section.advices{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+div.advicesBx{
+    position: relative;
+    width: 80%;
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+div.advicesBx h6{
+    margin-left: 60%;
+    margin-top: 10%;
+    text-decoration: underline;
+}
+
+div.visit{
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+div.contact-us{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+div.contact-us div.contactbx{
+    margin: 5px 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+section{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(225, 255, 255, 0.1);
+}
+
+header{
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100000 ;
+    width: 400px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+}
+
+header nav{
+    display: flex;
+    width: 350px;
+}
+
+header nav a{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 60px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+header nav a .icon{
+    position: relative;
+    display: block;
+    line-height: 65px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: #666;
+}
+
+header nav a.active .icon{
+    transform: translateY(-32px);
+    color: var(--clr);
+}
+
+header nav a .text{
+    position: absolute;
+    padding: 2px 7px;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 3px;
+    transition: 0.5s;
+    transform: translateY(15px);
+    opacity: 0;
+}
+
+header nav a.active .text{
+    transform: translateY(-4px);
+    background: var(--clr);
+    opacity: 1;
+}
+
+.step{
+    position: absolute;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.step::before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 18px #fff;
+}
+
+.step::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: -28px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: -15px 18px #fff;
+}
+
+header nav a:nth-child(1).active ~ .step{
+    transform: translateX(calc(70px * 0));
+}
+
+header nav a:nth-child(2).active ~ .step{
+    transform: translateX(calc(70px * 1));
+}
+
+header nav a:nth-child(3).active ~ .step{
+    transform: translateX(calc(70px * 2));
+}
+
+header nav a:nth-child(4).active ~ .step{
+    transform: translateX(calc(70px * 3));
+}

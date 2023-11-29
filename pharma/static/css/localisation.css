@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #e3fde0;
+}
+
+header{
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+header a{
+    font-size: 1.5em;
+    color: #21ff00bb;
+}
+
+img{
+    border-radius: 12px;
+}
+

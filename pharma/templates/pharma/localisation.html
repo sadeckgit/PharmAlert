@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ localisation.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/localisation.css' %}">
+</head>
+<body>
+    <header class="text-center text-capitalize py-5">
+        <a href="{% url 'index' %}">Pharma Alert</a>
+    </header>
+    <section class="details text-center text-capitalize">
+        <div class="detail">
+            <div class="imgbox">
+                <img src="{{ localisation.image.url }}" alt="{{ localisation.name }}" style="max-width: 250px;">
+            </div>
+            <div class="details py-3">
+                <h2>{{ localisation.name }}</h2>
+                <h3>Quarter: {{ localisation.quarter }}</h3>
+                <p class="detail-text text-center mx-3">{{ localisation.localisation }}</p>
+                <h1 class="btn btn-primary">opened</h1>
+            </div>
+        </div>
+    </section>
+    <div class="">
+        <a href="{% url 'index' %}" class="btn btn-outline-primary mx-5">back to home screen</a>
+    </div>
+</body>
+</html>

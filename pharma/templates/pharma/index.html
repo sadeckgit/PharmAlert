@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmAlert</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mains.css' %}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home" style="--clr:#f3218b;" class="active">
+                <span class="icon"><i class="fa-regular fa-bell"></i></span>
+                <span class="text">Home</span>
+            </a>
+            <a href="#pharmacies" style="--clr:#2196f3;">
+                <span class="icon"><i class="fa-regular fa-bell"></i></span>
+                <span class="text">Pharmacies</span>
+            </a>
+            <a href="#advices" style="--clr:#d56f1d;">
+                <span class="icon"><i class="fa-solid fa-notes-medical"></i></span>
+                <span class="text">Advices</span>
+            </a>
+            <a href="#contact-us" style="--clr:#dc1dff;">
+                <span class="icon"><i class="fa-regular fa-hospital"></i></span>
+                <span class="text">Contact-us</span>
+            </a>
+            <div class="step"></div>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="alert">
+            <h2 class="text-left text-capitalize title">
+                Pharma Alert <span class="btn btn-warning">Opened {{ opened }}</span>
+            </h2>
+        </div>
+        <hr class="line">
+        <div class="title">
+            <p class="title">
+                Find quickly opened pharmacies around you
+                at each time... <br>
+            </p>
+            {% if not user.is_authenticated %}
+                <a href="{% url 'signup' %}" class="btn btn-success mx-5">Sign-up</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <section id="pharmacy" class="pharmacies">
+
+
+        {% for pharmacy in pharmacies %}
+        {% for profile in users %}
+        {% if pharmacy.status == 'OPEN' %}
+
+        <div class="card">
+            <div class="box">
+                <div class="pharmaBx">
+                    <img src="{{ pharmacy.image.url }}" alt="{{ pharmacy.name }}">
+                </div>
+            </div>
+            <div class="box">
+                <div class="content">
+                    <h2>{{ pharmacy.name }}</h2>
+                    <ul>
+                        <li>Quarter: <span>{{ pharmacy.quarter }}</span></li>
+                        <li><span class="btn btn-success">Opened</span></li>
+                    </ul>
+                    <a href="{% url 'localisation_detail' pharmacy.slug %}" class="text-center text-capitalize">Localisation</a>
+                </div>
+            </div>
+            <div class="circle">
+                <div class="pharmaBx">
+                    <img src="{{ pharmacy.logo.url }}" alt="{{ pharmacy.name }}">
+                </div>
+            </div>
+        </div>
+
+        {% endif %}
+        {% endfor%}
+        {% endfor%}
+    </section>
+
+    <section class="advices">
+
+        <div class="advicesBx">
+            <h3 class="text-dark mx-3">{{ tip.content }}</h3>
+            <h6 class="text-warning">{{ tip.author }}</h6>
+        </div>
+
+        <div class="visit">
+            <p class="see text-left text-dark mx-5">
+                Even doctors need to consult. So, do not wait anymore,
+                go and consult when you can... <br>
+            </p>
+        </div>
+
+        <div class="contact-us">
+            <div class="contactbx">
+                <a href="https://web.facebook.com/profile.php?id=100087399823063&sk=about" class="btn btn-outline-primary">facebook</a>
+            </div>
+            <div class="contactbx">
+                <a href="sadeckbt@gmail.com" class="btn btn-outline-warning">gmail</a>
+            </div>
+            <div class="contactbx">
+                <a href="@sadeck.com" class="btn btn-outline-secondary">twitter</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact-us">
+        <div class="contactbx">
+            <a href="" class="facebook"></a>
+        </div>
+        <div class="contactbx">
+            <a href="" class="gmail"></a>
+        </div>
+        <div class="contactbx">
+            <a href="" class="twitter"></a>
+        </div>
+    </section>
+
+
+
+    <script>
+        let sec = document.querySelectorAll('section');
+        let links = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sec.forEach(section => {
+                let top = window.scrollY;
+                let offset = section.offsetTop;
+                let height = section.offsetHeight;
+                let id = section.getAttribute('id');
+
+                if(top >= offset && top < offset + height){
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        document.querySelector('header nav a[href*='+id+']').classList.add('active');
+                    })
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

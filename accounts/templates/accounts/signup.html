@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sign.css' %}">
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+
+
+        <form action="" class="signup" method="POST">
+
+            {% csrf_token %}
+
+            <h2 class="text-uppercase" >Sign-up</h2>
+
+            <div class="inputbx">
+                <input type="text" placeholder="Username/Nom" name="username">
+            </div>
+
+            <div class="inputbx">
+                <input type="text" placeholder="Country/Pays" name="country" spellcheck="true">
+            </div>
+
+            <div class="inputbx">
+                <input type="text" placeholder="Town/Ville" name="town" spellcheck="true">
+            </div>
+
+            <div class="inputbx">
+                <input type="number" name="phone" placeholder="Phone/Téléphone">
+            </div>
+
+            <div class="inputbx">
+                <input type="number" name="password" placeholder="password/mot de pass">
+            </div>
+
+            <div class="inputbx group text-light">
+                <h6>You already have Account ?</h6>
+                <a href="#">Login</a>
+            </div>
+
+            <div class="inputbx">
+                <input type="submit">
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
